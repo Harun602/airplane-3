@@ -1,0 +1,70 @@
+html,body{
+  height: 100%;
+}
+body{
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: #06b6ff;
+}
+.cloud{
+  height: 100%;
+  width: 100%;
+  background: url(images/cloud.jpg) repeat-x center center;
+  background-size: cover;
+  animation: cloud 10s linear infinite;
+}
+@keyframes cloud{
+  from{
+    background-position: 0 0;
+  }
+  to{
+    background-position: -1366px 0;
+  }
+}
+
+.plane{
+  background: url(images/plane.png) no-repeat center center;
+  background-size: 100%;
+  position: absolute;
+  z-index: 2;
+  animation: plansiz 60s linear infinite;
+  width: 800px;
+  height: 500px;
+  top: 1%;
+}
+@keyframes plansiz{
+  from{left: 20%; top: 40%; width: 50px; height: 12px;}
+  to{left: 80%; top: -30%; width: 800px; height: 500px;}
+  20%{transform: rotate(10deg);}
+  22%{transform: rotate(-10deg);}
+  25%{transform: rotate(0deg);}
+  70%{transform: rotate(30deg);}
+  80%{transform: rotate(-30deg);}
+  
+}
+.engine-wing-left, .engine-wing-right{
+  width: 30px;
+  height: 30px;
+  position: relative;
+  float: left;
+  animation: wings 60s linear infinite;
+}
+@keyframes wings{
+  from{width: 15px; height: 15px; top: -2px;}
+  to{width: 30px; height: 30px; top: -5px;}
+}
+.engine-wing-left{
+  left: 22.5%;
+}
+.engine-wing-right{
+  left: 34.5%;
+}
+.engine-wing-left img, .engine-wing-right img{
+  width: 100%;
+  animation: wingeffect 5s linear infinite;
+}
+@keyframes wingeffect{
+  from{transform: rotate(0deg);}
+  to{transform: rotate(360deg);}
+}
